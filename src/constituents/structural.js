@@ -96,7 +96,7 @@ const structural = {
 
     result += '  </manifest>[[EOL]]';
 
-    result += "  <spine toc='navigation'>[[EOL]]";
+    result += "  <spine page-progression-direction='rtl' toc='navigation'>[[EOL]]";
     result += "    <itemref idref='cover' linear='yes' />[[EOL]]";
 
     for (i = 1; i <= document.sections.length; i += 1) {
