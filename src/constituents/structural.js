@@ -65,6 +65,19 @@ const structural = {
       result += "    <meta name='calibre:series' content='[[SERIES]]'/>[[EOL]]";
       result += "    <meta name='calibre:series_index' content='[[SEQUENCE]]'/>[[EOL]]";
     }
+    if (document.metadata.kindleComicConverter){
+      result += "    <meta name='fixed-layout' content='true'/>";
+      result += "    <meta name='original-resolution' content='[[ORIGINALRESOLUTIONWIDTH]]x[[ORIGINALRESOLUTIONHEIGHT]]'/>";
+      result += "    <meta name='book-type' content='comic'/>";
+      result += "    <meta name='primary-writing-mode' content='horizontal-rl'/>";
+      result += "    <meta name='zero-gutter' content='true'/>";
+      result += "    <meta name='zero-margin' content='true'/>";
+      
+      result += "    <meta name='ke-border-color' content='#FFFFFF'/>";
+      result += "    <meta name='ke-border-width' content='0'/>";
+      result += "    <meta name='orientation-lock' content='portrait'/>";
+      result += "    <meta name='region-mag' content='true'/>";
+    }
 
     result += "    <meta name='cover' content='cover-image'/>[[EOL]]";
     result += '  </metadata>[[EOL]]';
@@ -96,7 +109,7 @@ const structural = {
 
     result += '  </manifest>[[EOL]]';
 
-    result += "  <spine page-progression-direction='rtl' toc='navigation'>[[EOL]]";
+    result += "  <spine page-progression-direction='[[PAGEDIRECTION]]' toc='navigation'>[[EOL]]";
     result += "    <itemref idref='cover' linear='yes' />[[EOL]]";
 
     for (i = 1; i <= document.sections.length; i += 1) {

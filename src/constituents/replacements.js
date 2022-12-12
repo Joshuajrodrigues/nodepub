@@ -28,6 +28,9 @@ const replacements = (document, original) => {
   result = tagReplace(result, 'CONTENTS', document.metadata.contents);
   result = tagReplace(result, 'SOURCE', document.metadata.source);
   result = tagReplace(result, 'MODIFIED', modified);
+  result = tagReplace(result, 'PAGEDIRECTION',document.metadata.pageDirection)
+  result = tagReplace(result, 'ORIGINALRESOLUTIONWIDTH',document.metadata.originalResWidth)
+  result = tagReplace(result, 'ORIGINALRESOLUTIONHEIGHT',document.metadata.originalResHeight)
   return result;
 };
 
